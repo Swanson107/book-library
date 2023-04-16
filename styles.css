@@ -1,0 +1,10 @@
+
+
+
+
+.book-entry {
+    display: flex;
+    flex-direction: column;
+    max-width: 15%;
+    gap: 1rem;
+}

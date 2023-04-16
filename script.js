@@ -25,6 +25,9 @@ function addToBooks() {
     
 }
 
-addToBooks();
-
 console.table(books);
+
+
+document.getElementById('submit-book').addEventListener('click', function() {
+    
+})
