@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Olive Reader</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-    
+      <div class="header-left">
+        <h4>The Globe Library</h4>
+        <div id="logo"></div>
+      </div>
+      <div class="header-right">
+        <p class="created-by">Created by Thomas Swanson</p>
+        <p class="created-by">
+          <a href="https://github.com/Swanson107">github.com/Swanson107</a>
+        </p>
+      </div>
     </div>
     <div class="main-container">
-        <div class="sidebar">
-            
+      <div class="sidebar"></div>
+      <div class="content">
+        <div class="book-entry">
+            <h5 style="background-color:blue">Submit a new book to your Library</h5>
+          <label for="title-input">Enter Book Title</label>
+          <input type="text" class="input" id="title-input" />
+
+          <label for="date-input">Enter Publishing Date</label>
+          <input
+            type="number"
+            class="input"
+            id="date-input"
+            placeholder="e.g. 1976"
+          />
+
+          <label for="author-input">Enter Author</label>
+          <input type="text" class="input" id="author-input" />
+
+          <label for="pages-input">Enter Number of Pages</label>
+          <input
+            type="number"
+            class="input"
+            id="pages-input"
+            placeholder="e.g. 457"
+          />
+
+          <div class="read-check">
+            <label for="read-check">Have you read this book yet?</label>
+            <input type="checkbox" id="read-check" />
+          </div>
+
+          <button class="button" id="submit-book">Submit</button>
+          <p id="submit-error"></p>
         </div>
-        <div class="content">
-            <div class="book-entry">
-                <label for="title-input">Enter Book Title</label>
-                <input type="text" class="input" id="title-input">
-                <label for="date-input">Enter Publishing Date</label>
-                <input type="number" class="input" id="date-input" placeholder="e.g. 1976">
-                <label for="author-input">Enter Author</label>
-                <input type="text" class="input" id="author-input">
-                <button class="button" id="submit-book">Submit</button>
-                <p id="submit-error"></p>
-            </div>
-            <div class="book-display">
-
-            </div>
-
+        <div class="book-display">
+            <table class="book-table">
+                <tr>
+                    <th class="table-category">Book Title</th>
+                    <th class="table-category">Author</th>
+                    <th class="table-category">Publishing Date</th>
+                    <th class="table-category">Pages</th>
+                    <th class="table-category">Completed</th>
+                </tr>
+            </table>
         </div>
+      </div>
     </div>
-    <div class="footer">
-
-    </div>
-    
-</body>
+    <div class="footer"></div>
+  </body>
 </html>

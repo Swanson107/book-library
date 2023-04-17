@@ -1,10 +1,76 @@
+html,
+body {
+    background-color: darkgrey;
+    margin: auto;
+    font-size: 18px;
+}
 
+h4 {
+    font-size: 22px;
+}
+h5 {
+    margin-top: -1px;
+    margin-top: 12px;
+    margin-bottom: -1px;
+}
 
+.header {
+    background-color: lightgreen;
+    height:6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+}
 
+.header-left {
+    display: flex;
+    margin-left: 8rem;
+    background-color: lightcoral;
+}
+
+.header-right {
+    margin-right: 3rem;
+    height: 75%;
+}
+.created-by {
+    font-size: 13px;
+}
+
+.created-by a {
+    text-decoration: none;
+    color: lightseagreen;
+}
+
+#logo {
+    position:fixed;
+    margin-left: 12px;
+    margin-top: 6px;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    background-image: url(images/earth.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 96px;
+    max-height: 96px;
+}
 
 .book-entry {
     display: flex;
     flex-direction: column;
     max-width: 15%;
     gap: 1rem;
+    background-color: lightcyan;
+}
+
+.book-display {
+    background-color: lightsalmon;
+    border: 1px solid black;
+    max-width: 25%;
+}
+
+.book-table {
+    background-color: lightgoldenrodyellow;
+ 
 }
