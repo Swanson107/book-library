@@ -56,6 +56,16 @@ h5 {
     max-height: 96px;
 }
 
+.main-container {
+    background-color: lightyellow;
+}
+
+.content {
+    background-color: lightpink;
+    display: flex;
+    justify-content: space-around;
+}
+
 .book-entry {
     display: flex;
     flex-direction: column;
@@ -67,10 +77,20 @@ h5 {
 .book-display {
     background-color: lightsalmon;
     border: 1px solid black;
-    max-width: 25%;
+    width: 50%;
+    max-width: 75%;
 }
 
+
 .book-table {
-    background-color: lightgoldenrodyellow;
- 
+    width: 100%;
+    background-color: white;;
+}
+
+.table-category {
+    background-color: darkgrey;
+}
+
+.book-line {
+    background-color: lightskyblue;
 }
