@@ -1,9 +1,14 @@
 let books = [];
+let bookDetails = [];
+
+// inputs
 const titleInput = document.getElementById('title-input');
 const dateInput = document.getElementById('date-input');
 const authorInput = document.getElementById('author-input');
 const pagesInput = document.getElementById('pages-input');
 const submitError = document.getElementById('submit-error');
+
+
 
 function Book(title, date, author, pages) {
     this.title = title;
@@ -13,33 +18,51 @@ function Book(title, date, author, pages) {
     this.read = false;
 }
 
-const twilight = new Book('Twilight', 2006, 'Stephanie Meyers', 267);
-const twilightTwo = Object.create(twilight);
-twilightTwo.title = 'New Moon';
-twilightTwo.date = 2008;
-twilightTwo.author = twilight.author;
-twilightTwo.pages = 356;
-twilightTwo.read = true;
-
-books.push(twilight);
-books.push(twilightTwo);
-
 function addToBooks() {
     let newTitle = titleInput.value;
     let newDate = dateInput.value;
     let newAuthor = authorInput.value;
     let newPages = pagesInput.value;
 
-
     const newBook = new Book(newTitle, parseInt(newDate), newAuthor, parseInt(newPages));
     books.push(newBook);
+    displayBooks();
 }
 
-console.table(books);
+const table = document.querySelector('.book-table');
+tableCategories = ['Book Title', 'Author', 'Publishing Date', 'Pages', 'Completed'];
+
+function displayBooks() {
+    table.innerHTML = '';
+    const titleRow = document.createElement('tr');
+    table.appendChild(titleRow);
+    for (k=0;k<5;k++) {
+        const tableTitle = document.createElement('th');
+        tableTitle.className = 'table-category';
+        tableTitle.textContent = tableCategories[k];
+        titleRow.appendChild(tableTitle);
+    }
+    for (let i = 0; i < books.length; i++) {
+        const newBookRow = document.createElement('tr')
+      table.appendChild(newBookRow);
+      const book = books[i];
+      const bookProperties = [book.title, book.date, book.author, book.pages, book.read];
+      for (let j = 0; j < bookProperties.length; j++) {
+        const newTableColumn = document.createElement('th');
+        newTableColumn.className = "book-line";
+        newTableColumn.textContent = bookProperties[j];
+        newBookRow.appendChild(newTableColumn);
+      }
+    }  
+  }
+displayBooks();
 
 
 document.getElementById('submit-book').addEventListener('click', function() {
-    if (titleInput.value === '' || dateInput.value === '' || authorInput.value === '') {
+    if (titleInput.value === '' ||
+        dateInput.value === '' ||
+        authorInput.value === '' ||
+        pagesInput.value === '') {
         submitError.textContent = 'Error. One or more fields are empty';
     } else {
         addToBooks();
@@ -51,3 +74,4 @@ document.getElementById('submit-book').addEventListener('click', function() {
         console.table(books);
     }
 })
+
