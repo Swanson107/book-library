@@ -9,8 +9,6 @@ const pagesInput = document.getElementById("pages-input");
 const submitError = document.getElementById("submit-error");
 const readCheck = document.getElementById("read-check");
 let bookRead = false;
-const bookFinished = 'images/book-check-outline.svg';
-const bookNotFinished = 'images/book-cancel-outline.svg'
 
 document.querySelector('h4').addEventListener('click', function() {
     console.log(bookRead);
@@ -29,18 +27,14 @@ function addToBooks() {
   let newDate = dateInput.value;
   let newAuthor = authorInput.value;
   let newPages = pagesInput.value;
-  if (readCheck.checked) {
-    bookRead = true;
-  } else {
-    bookRead = false;
-  }
+  let bookStatus = readCheck.checked;
 
   const newBook = new Book(
     newTitle,
     parseInt(newDate),
     newAuthor,
     parseInt(newPages),
-    bookRead
+    bookStatus
   );
   books.push(newBook);
   displayBooks();
@@ -81,14 +75,14 @@ function displayBooks() {
       newTableColumn.textContent = bookProperties[j];
       newBookRow.appendChild(newTableColumn);
     }
-    const bookDone = document.createElement('img');
-    bookDone.className = 'book-check';
-    if (bookRead === true) {
-        bookDone.setAttribute('src', 'images/book-check-outline.svg');
+    const bookStatus = document.createElement('img');
+    bookStatus.className = 'book-check';
+    if (book.read) {
+        bookStatus.setAttribute('src', 'images/book-check-outline.svg');
     } else {
-        bookDone.setAttribute('src', 'images/book-cancel-outline.svg')
+        bookStatus.setAttribute('src', 'images/book-cancel-outline.svg')
     }
-    newBookRow.appendChild(bookDone);
+    newBookRow.appendChild(bookStatus);
   }
 
 }
