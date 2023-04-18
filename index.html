@@ -24,19 +24,20 @@
     <div class="main-container">
       <div class="content">
         <div class="book-entry">
-            <h5 style="background-color:blue">Submit a new book to your Library</h5>
+            <h5>Submit a new book to your Library</h5>
           <label for="title-input">Enter Book Title</label>
-          <input type="text" class="input" id="title-input" />
+          <input type="text" class="input" maxlength="32" id="title-input" />
 
           <label for="author-input">Enter Author</label>
-          <input type="text" class="input" id="author-input" />
+          <input type="text" class="input" maxlength="32" id="author-input" />
 
-          <label for="date-input">Enter Publishing Date</label>
+          <label for="date-input">Enter Publishing Year</label>
           <input
             type="number"
             class="input"
             id="date-input"
             placeholder="e.g. 1976"
+            max="2077"
           />
 
           <label for="pages-input">Enter Number of Pages</label>
@@ -68,6 +69,5 @@
         </div>
       </div>
     </div>
-    <div class="footer"></div>
   </body>
 </html>
