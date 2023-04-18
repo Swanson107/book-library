@@ -9,6 +9,8 @@ const pagesInput = document.getElementById("pages-input");
 const submitError = document.getElementById("submit-error");
 const readCheck = document.getElementById("read-check");
 let bookRead = false;
+const bookFinished = 'images/book-check-outline.svg';
+const bookNotFinished = 'images/book-cancel-outline.svg'
 
 document.querySelector('h4').addEventListener('click', function() {
     console.log(bookRead);
@@ -72,7 +74,6 @@ function displayBooks() {
       book.date,
       book.author,
       book.pages,
-      book.read,
     ];
     for (let j = 0; j < bookProperties.length; j++) {
       const newTableColumn = document.createElement("th");
@@ -80,7 +81,16 @@ function displayBooks() {
       newTableColumn.textContent = bookProperties[j];
       newBookRow.appendChild(newTableColumn);
     }
+    const bookDone = document.createElement('img');
+    bookDone.className = 'book-check';
+    if (bookRead === true) {
+        bookDone.setAttribute('src', 'images/book-check-outline.svg');
+    } else {
+        bookDone.setAttribute('src', 'images/book-cancel-outline.svg')
+    }
+    newBookRow.appendChild(bookDone);
   }
+
 }
 displayBooks();
 

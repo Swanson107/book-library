@@ -94,3 +94,13 @@ h5 {
 .book-line {
     background-color: lightskyblue;
 }
+
+.book-check {
+    background-color: lightskyblue;
+    margin-left: 33%;
+    max-height: 25%;
+    max-width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
